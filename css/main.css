@@ -18,6 +18,7 @@
 body {
     background-color: var(--background-color);
 }
+
 header {
     background-color: var(--primary-color);
     nav {
@@ -26,6 +27,7 @@ header {
         img {
             padding: 0 10px;
             object-fit: contain;
+            width: 70px;
         }
         ul {
             display: flex;
@@ -36,6 +38,12 @@ header {
                     font-weight: 300;
                     font-size: 15pt;
                     transition: 0.1s;
+                    &:hover {
+                        color: var(--hover-color);
+                    }
+                    &:active {
+                        color: var(--secondary-color);
+                    }
                 }
             }
         }
@@ -48,21 +56,22 @@ header {
             box-shadow: 0 0 10px 0 #000000;
             background-color: #2ecc71;
             transition: 0.1s;
+            &:hover {
+                transform: scale(1.08);
+            }
+            &:active {
+                transform: scale(0.95);
+            }
         }
     }
 }
 
-header nav ul li a:hover {
-    color: var(--hover-color);
-}
-header nav ul li a:active {
-    color: var(--secondary-color);
-}
-
 main {
-    background-color: #2ecc71;
-    padding: 10px;
-    margin: 10px;
+    article {
+        background-color: #2ecc71;
+        padding: 10px;
+        margin: 10px;
+    }
 }
 
 footer {
@@ -70,19 +79,13 @@ footer {
     padding: 20px 0 20px 0;
     display: flex;
     justify-content: space-evenly;
-}
-
-.small-logo {
-    width: 70px;
+    & .footer-brand {
+        img {
+            width: 100px;
+        }
+    }
 }
 
 .active {
     font-weight: 600;
-}
-
-.contact:hover {
-    transform: scale(1.08);
-}
-.contact:active {
-    transform: scale(0.95);
 }

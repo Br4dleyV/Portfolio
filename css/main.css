@@ -4,6 +4,7 @@
     --primary-color: #01253b;
     --secondary-color: #eca63d;
     --background-color: rgb(208, 208, 208);
+    --hover-color: #888888;
 }
 
 * {
@@ -19,35 +20,43 @@ body {
 }
 header {
     background-color: var(--primary-color);
-}
-header img {
-    padding: 0 10px;
-    object-fit: contain;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        img {
+            padding: 0 10px;
+            object-fit: contain;
+        }
+        ul {
+            display: flex;
+            padding: 20px 10px;
+            li {
+                a {
+                    padding: 0 20px;
+                    font-weight: 300;
+                    font-size: 15pt;
+                    transition: 0.1s;
+                }
+            }
+        }
+        .contact {
+            font-weight: 600;
+            font-size: 14pt;
+            margin: 10px;
+            border-radius: 200px;
+            padding: 10px;
+            box-shadow: 0 0 10px 0 #000000;
+            background-color: #2ecc71;
+            transition: 0.1s;
+        }
+    }
 }
 
-header nav {
-    display: flex;
-    justify-content: space-between;
+header nav ul li a:hover {
+    color: var(--hover-color);
 }
-
-.contact {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-    border-radius: 200px;
-    padding: 10px;
-    box-shadow: 0 0 10px 0 #000000;
-    background-color: #2ecc71;
-}
-
-header nav ul {
-    display: flex;
-    padding: 20px 10px;
-}
-
-header nav ul li {
-    padding: 0 20px;
-    font-weight: 300;
+header nav ul li a:active {
+    color: var(--secondary-color);
 }
 
 main {
@@ -64,9 +73,16 @@ footer {
 }
 
 .small-logo {
-    width: 60px;
+    width: 70px;
 }
 
 .active {
     font-weight: 600;
+}
+
+.contact:hover {
+    transform: scale(1.08);
+}
+.contact:active {
+    transform: scale(0.95);
 }

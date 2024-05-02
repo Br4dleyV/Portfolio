@@ -18,6 +18,7 @@
 body {
     background-color: var(--background-color);
     margin: 0;
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "header header" "main main" "footer footer";
@@ -28,26 +29,25 @@ header {
     background-color: var(--primary-color);
     nav {
         display: flex;
-        height: 6vh;
+        height: 8vh;
         img {
-            padding: 0 0 0 1vw;
-            object-fit: contain;
             height: 100%;
         }
         .nav-bar li {
+            font-size: 1.3em;
             padding: 0 2vw;
         }
+        .socials li {
+            font-size: 1.6em;
+            padding: 0 0.5vw;
+        }
         ul {
-            height: 100%;
             display: flex;
+            height: 100%;
             li {
                 display: flex;
                 height: 100%;
             }
-        }
-        .active {
-            font-weight: 700;
-            border-bottom: 2px solid var(--secondary-color);
         }
     }
 }
@@ -60,6 +60,33 @@ footer {
     grid-area: footer;
 }
 
+/* Media Queries */
+@media screen and (max-width: 650px) {
+    header {
+        nav {
+            .socials {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    header {
+        height: 12vh;
+        nav {
+            flex-direction: column;
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+            .nav-bar li {
+                font-size: 6vw;
+            }
+        }
+    }
+}
+
 /* Classes */
 .discord {
     color: #7289da;
@@ -69,4 +96,8 @@ footer {
 }
 .youtube {
     color: #ff0000;
+}
+.active {
+    font-weight: 700;
+    border-bottom: 2px solid var(--secondary-color);
 }

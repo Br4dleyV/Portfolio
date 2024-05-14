@@ -46,15 +46,17 @@ header {
     }
 }
 
-main {
-    grid-area: main;
-}
-
-footer {
-    grid-area: footer;
-}
-
 .active {
     font-weight: 700;
     border-bottom: 2px solid var(--secondary-color);
+}
+
+@media screen and (max-width: 570px) {
+    header {
+        display: block;
+    }
+    .active {
+        font-weight: 700;
+        border-bottom: 2px solid var(--secondary-color);
+    }
 }

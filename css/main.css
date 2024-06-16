@@ -3,8 +3,8 @@
 :root {
     --primary-color: #01253b;
     --secondary-color: #eca63d;
-    --background-color: rgb(222, 222, 222);
-    --background-color2: #005489;
+    --background-color: #005489;
+    --primary-color-darker: #001a2c;
 }
 
 * {
@@ -16,47 +16,51 @@
 }
 
 body {
-    background-color: var(--background-color2);
+    background-color: var(--background-color);
     margin: 0;
-    padding: 0;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
 }
 
 header {
     display: flex;
+    grid-area: header;
     height: 80px;
     background-color: var(--primary-color);
     justify-content: flex-start;
     img {
-        padding-left: 20px;
-        height: 100%;
+        padding: 0 20px;
+        height: inherit;
     }
     nav {
         display: flex;
-        height: 100%;
+        height: inherit;
         ul {
             display: flex;
-            height: 100%;
+            height: inherit;
             li {
                 display: flex;
-                height: 100%;
+                height: inherit;
                 font-size: 1.3em;
                 padding: 0 20px;
+                &#active {
+                    /* Active page */
+                    font-weight: 700;
+                    border-bottom: 2px solid var(--secondary-color);
+                }
             }
         }
     }
 }
 
-.active {
-    font-weight: 700;
-    border-bottom: 2px solid var(--secondary-color);
+main {
+    grid-area: main;
 }
 
-@media screen and (max-width: 570px) {
-    header {
-        display: block;
-    }
-    .active {
-        font-weight: 700;
-        border-bottom: 2px solid var(--secondary-color);
-    }
+footer {
+    grid-area: footer;
 }

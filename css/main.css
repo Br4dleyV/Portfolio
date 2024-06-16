@@ -18,17 +18,10 @@
 body {
     background-color: var(--background-color);
     margin: 0;
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    grid-template-areas:
-        "header header"
-        "main main"
-        "footer footer";
 }
 
 header {
     display: flex;
-    grid-area: header;
     height: 80px;
     background-color: var(--primary-color);
     justify-content: flex-start;
@@ -57,10 +50,21 @@ header {
     }
 }
 
-main {
-    grid-area: main;
-}
-
 footer {
-    grid-area: footer;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--primary-color);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+
+    div {
+        justify-content: center;
+        flex-direction: column;
+        p {
+            padding: 0 20px;
+        }
+    }
 }

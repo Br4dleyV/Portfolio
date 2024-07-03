@@ -75,3 +75,26 @@ footer {
     padding: 5vh 0;
     background-color: #141414;
 }
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 20vw !important;
+    }
+    h2 {
+        font-size: 7vw !important;
+    }
+    h3 {
+        font-size: 6vw !important;
+    }
+    header {
+        img {
+            display: none;
+        }
+    }
+    main {
+        grid-template-columns: 100%;
+    }
+    p {
+        font-size: 5vw;
+    }
+}
